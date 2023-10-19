@@ -34,22 +34,25 @@ function App() {
       country: "Italy",
     },
   ];
+
   return (
     <div className="App">
+      <h1>student</h1>
       <table>
-        <h1>student</h1>
-        <tr>
-          <th>company</th>
-          <th>contact</th>
-          <th>country</th>
-        </tr>
-        {students.map((student, index) => (
-          <tr key={index}>
-            <td>{student.company}</td>
-            <td>{student.contact}</td>
-            <td>{student.country}</td>
+        <tbody>
+          <tr>
+            <th>company</th>
+            <th>contact</th>
+            <th>country</th>
           </tr>
-        ))}
+          {students.map((student, index) => (
+            <tr key={index}>
+              <td>{student.company}</td>
+              <td>{student.contact}</td>
+              <td>{student.country}</td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
