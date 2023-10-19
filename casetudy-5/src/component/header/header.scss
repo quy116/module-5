@@ -1,0 +1,17 @@
+.container1 {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  //   padding: 2rem;
+  color: #fff;
+  background-color: #046056;
+  min-width: 100%;
+  align-items: center;
+  .content {
+    display: flex;
+    align-items: center;
+    .title {
+      padding: 1rem;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+.Cusd {
+  :global {
+    .cusd-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 36rem;
+      padding: 3rem;
+      gap: 6rem;
+      .cusd-list-content {
+        background-color: var(--background-container);
+        border-radius: 1.2rem;
+        .img {
+          // overflow: hidden;
+          position: relative;
+          &:hover .dropdown-content {
+            opacity: 0.8;
+            visibility: visible;
+            &:hover {
+              height: 21rem;
+            }
+          }
+          &:hover .cusd-img {
+            transform: scale(1.1);
+          }
+          border-radius: 1.2rem;
+          .cusd-img {
+            max-width: 36rem;
+            // width: 100%;
+            transition: transform 0.5s, filter 1.5s ease-in;
+            transform-origin: center center;
+          }
+        }
+
+        .cusd-trading {
+          padding-top: 1.6rem;
+          background-color: aqua;
+
+          // height: 100%;
+          .cusd__content {
+            .img-logo {
+              max-width: 4.4rem;
+              height: 4.4rem;
+              border: 50%;
+              //   margin-right: 2rem;
+              //   margin-left: 1.6rem;
+              margin: 0 1.6rem 2rem;
+            }
+            .trading {
+              color: var(--primary-text);
+              font-size: 1.2rem;
+              &:hover {
+                color: var(--brand-primary-hover);
+              }
+              .name-logo {
+                font-size: 1.2rem;
+                color: var(--disabled-text);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
