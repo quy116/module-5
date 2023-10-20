@@ -5,16 +5,16 @@ class StudentInfoComponent extends Component {
     this.state = {
       data: [
         {
-          Id: 1,
-          Name: "Sang Heo",
-          Age: "20",
-          Address: "Đà Nẵng",
+          id: 1,
+          name: "Sang Heo",
+          age: "20",
+          address: "Đà Nẵng",
         },
         {
-          Id: 2,
-          Name: "Trung Heo",
-          Age: "21",
-          Address: "Đà Nẵng",
+          id: 2,
+          name: "Trung Heo",
+          age: "21",
+          address: "Đà Nẵng",
         },
       ],
     };
@@ -35,10 +35,10 @@ class StudentInfoComponent extends Component {
           <tbody>
             {this.state.data.map((student, index) => (
               <tr key={index}>
-                <td>{student.Id}</td>
-                <td>{student.Name}</td>
-                <td>{student.Age}</td>
-                <td>{student.Address}</td>
+                <td>{student.id}</td>
+                <td>{student.name}</td>
+                <td>{student.age}</td>
+                <td>{student.address}</td>
               </tr>
             ))}
           </tbody>
