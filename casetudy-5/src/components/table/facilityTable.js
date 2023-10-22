@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import * as customerService from "../../service/customerService/customerSerivce";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
-function Table() {
+function FacilityTable() {
+  const [customerData, setCustomerData] = useState([]);
+
+  const display = async () => {
+    try {
+      const data = await customerService.GetAll;
+      setCustomerData(data);
+    } catch (error) {
+      // Handle errors here
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    display();
+  }, []);
+
+  console.log(customerData);
   return (
     <div>
-      <div className="flex items-center justify-center min-h-screen p-5 bg-gradient-to-tl">
+      <div className="flex items-center justify-center min-h-screen p-12 bg-gradient-to-tl">
         <main className="table w-4/5 bg-opacity-75 shadow-lg overflow-hidde h-5/6 backdrop-blur-7 rounded-xl">
           <section className="table__body">
             <table className="w-full h-80">
@@ -30,7 +50,7 @@ function Table() {
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                   >
-                    <i className=" fa-regular fa-trash-can"></i>
+                    <FontAwesomeIcon icon={faArrowRight} />
                   </button>
                 </td>
                 <td>
@@ -65,4 +85,4 @@ function Table() {
   );
 }
 
-export default Table;
+export default FacilityTable;

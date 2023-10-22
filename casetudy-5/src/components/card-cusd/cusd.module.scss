@@ -1,17 +1,22 @@
 .Cusd {
   :global {
     .cusd-list {
+      width: 100%;
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      max-width: 36rem;
-      padding: 3rem;
-      gap: 6rem;
+      gap: 1rem;
+      // max-width: 36rem;
+      padding: 4.3rem;
+      // gap: 6rem;
       .cusd-list-content {
-        background-color: var(--background-container);
+        background-color: #046056;
         border-radius: 1.2rem;
         .img {
-          // overflow: hidden;
+          overflow: hidden;
+          width: 100%;
+          object-fit: cover;
           position: relative;
+          height: 20rem;
           &:hover .dropdown-content {
             opacity: 0.8;
             visibility: visible;
@@ -22,10 +27,13 @@
           &:hover .cusd-img {
             transform: scale(1.1);
           }
-          border-radius: 1.2rem;
+          border-start-start-radius: 1.2rem;
+          border-top-right-radius: 1.2rem;
           .cusd-img {
-            max-width: 36rem;
+            // max-width: 36rem;
             // width: 100%;
+            width: 100%;
+            height: 100%;
             transition: transform 0.5s, filter 1.5s ease-in;
             transform-origin: center center;
           }
@@ -33,7 +41,7 @@
 
         .cusd-trading {
           padding-top: 1.6rem;
-          background-color: aqua;
+          // background-color: #;
 
           // height: 100%;
           .cusd__content {
