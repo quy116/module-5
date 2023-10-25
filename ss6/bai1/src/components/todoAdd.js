@@ -3,8 +3,9 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import * as Yup from "yup";
-import TodoList from "./todoList";
+import TodoList from "./TodoList";
 import { Navigate, Route, useNavigate } from "react-router-dom";
+import { addTodo } from "../service/listTo/listTodoSerivce";
 
 function TodoAdd() {
   const initialValues = {
@@ -17,12 +18,12 @@ function TodoAdd() {
   const navigate = useNavigate();
 
   const handleSubmit = async (values) => {
-    try {
-      await axios.post("http://localhost:8080/posts", values);
+    const flag = addTodo();
+    if (flag) {
       navigate("/todolist");
-      // Sau khi gửi xong, bạn có thể thực hiện các tác vụ khác ở đây nếu cần.
-    } catch (error) {
-      console.error("Gửi yêu cầu thất bại:", error);
+      console.log("ok");
+    } else {
+      navigate("/addlist");
     }
   };
 
@@ -37,7 +38,7 @@ function TodoAdd() {
           <label htmlFor="">todolist</label>
           <Field type="text" name="title"></Field>
           <ErrorMessage
-            className="p-20 bg-slate-600  "
+            className="p-20 bg-slate-600 "
             name="title"
           ></ErrorMessage>
           <button type="submit">submit</button>

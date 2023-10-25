@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
-import TodoList from "./components/todoList";
+import TodoList from "./components/TodoList";
 import Spinner from "./components/Spinner";
-import TodoAdd from "./components/todoAdd";
+import TodoAdd from "./components/TodoAdd";
 import { Route, Routes } from "react-router-dom";
 
 function App() {

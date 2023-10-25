@@ -1,14 +1,15 @@
 import axios, { Axios } from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { showList } from "../service/listTo/listTodoSerivce";
 
 function TodoList() {
   const [list, setlist] = useState([]);
-  const name = useEffect(() => {
+  useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get("http://localhost:8080/posts");
-        setlist(response.data);
+        const response = showList;
+        setlist(response);
       } catch (error) {
         console.error("Error:", error);
       }
