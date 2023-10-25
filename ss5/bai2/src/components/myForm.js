@@ -22,23 +22,23 @@ function MyForm() {
     fourteenCovid: [],
   };
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("khong duoc de trong"),
-    identity: Yup.string().required("khong duoc de trong"),
-    dateYear: Yup.string().required("khong duoc de trong"),
+    name: Yup.string().required("không được để trống"),
+    identity: Yup.string().required("không được để trống"),
+    dateYear: Yup.string().required("không được để trống"),
     dateYear: Yup.number().min(1900, "Năm phải lớn hơn hoặc bằng 1900"),
-    country: Yup.string().required("khong duoc de trong"),
-    company: Yup.string().required("khong duoc de trong"),
-    province: Yup.string().required("khong duoc de trong"),
-    district: Yup.string().required("khong duoc de trong"),
-    wards: Yup.string().required("khong duoc de trong"),
-    address: Yup.string().required("khong duoc de trong"),
-    phoneNumber: Yup.string().required("khong duoc de trong"),
+    country: Yup.string().required("không được để trống"),
+    company: Yup.string().required("không được để trống"),
+    province: Yup.string().required("không được để trống"),
+    district: Yup.string().required("không được để trống"),
+    wards: Yup.string().required("không được để trống"),
+    address: Yup.string().required("không được để trống"),
+    phoneNumber: Yup.string().required("không được để trống"),
     email: Yup.string()
       .matches(
         /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/,
         "Invalid email address "
       )
-      .required("khong duoc de trong"),
+      .required("không được để trống"),
   });
 
   return (
