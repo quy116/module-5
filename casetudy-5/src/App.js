@@ -1,20 +1,27 @@
 import "./App.css";
 import Header from "./components/header/index";
-import Body from "./components/body/index.js";
 import Footer from "./components/footter/Footer";
 import Cusd from "./components/card-cusd";
-import Table from "./components/table/customerTable";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ContractTable from "./components/table/contractTable";
+import { Routes, Route } from "react-router-dom";
+import CustomerTable from "./components/customers/customerTable";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Body />
-      <Cusd />
+      <ToastContainer />
+      <Routes>
+        <Route path="/customer" element={<CustomerTable />}></Route>
+        <Route path="/contract" element={<ContractTable />}></Route>
+        <Route path="/facility" element={<Cusd />}></Route>
+      </Routes>
+      {/* <Body /> */}
+      {/* <Cusd />
       <Table />
-      <ContractTable />
+      <ContractTable /> */}
       <div className="fotter">
         <Footer />
       </div>

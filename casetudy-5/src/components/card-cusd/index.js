@@ -47,7 +47,7 @@ function Cusd() {
       <div className=" cusd-list">
         {dataCardHouse.map((item, index) => (
           <div className="bg-pink-300 cusd-list-content" key={index}>
-            <div className="">
+            <div className="img">
               <img alt="" src={item.img} className="w-full cusd-img" />
             </div>
             <div className=" cusd-trading">

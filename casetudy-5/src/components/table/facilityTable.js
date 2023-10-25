@@ -8,8 +8,8 @@ function FacilityTable() {
 
   const display = async () => {
     try {
-      const data = await customerService.GetAll;
-      setCustomerData(data);
+      // const data = await customerService.GetAll;
+      // setCustomerData(data);
     } catch (error) {
       // Handle errors here
       console.error(error);
