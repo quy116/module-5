@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ValidationWithFormMilk from "./components/validationWithFormMilk";
+import ValidationWithFormMilk from "./components/ValidationWithFormMilk";
 
 function Info() {
   return (

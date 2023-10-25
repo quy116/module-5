@@ -6,13 +6,13 @@ import * as Yup from "yup";
 function ValidationWithFormMilk() {
   let formValidate = { name: "", email: "", phone: "", message: "" };
   const validationSchema = {
-    name: Yup.string().required("khong dc de trong"),
+    name: Yup.string().required("không đc để trống"),
     email: Yup.string().matches(
       /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
       "sai format"
     ),
-    phone: Yup.string().required("khong dc de trong"),
-    message: Yup.string().required("khong dc de trong"),
+    phone: Yup.string().required("không đc để trống"),
+    message: Yup.string().required("không đc để trống"),
   };
   return (
     <div>
