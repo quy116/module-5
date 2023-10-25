@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { deleteBook, getAll, getBookById } from "../service/data/bookService";
-import AddBook from "./AddBook";
 import { Link } from "react-router-dom";
-import { boolean } from "yup";
 
 function ShowListBook() {
   const [getListBook, setGetListBook] = useState([]);
@@ -24,13 +22,6 @@ function ShowListBook() {
       setGetListBook(updatedData);
     } catch (error) {
       console.log("loi", error);
-    }
-  }
-  async function showEdit(id) {
-    try {
-      await getBookById(id);
-    } catch (error) {
-      console.log(error);
     }
   }
   return (

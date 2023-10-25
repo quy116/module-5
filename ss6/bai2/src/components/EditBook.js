@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 import { useNavigate, useParams } from "react-router-dom";
-import { edit, getBookById, saveBook } from "../service/data/bookService";
+import { edit, getBookById } from "../service/data/bookService";
 
 function EditBook() {
   const navigate = useNavigate();
