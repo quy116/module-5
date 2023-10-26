@@ -2,9 +2,11 @@ import axios from "axios";
 import React from "react";
 
 const URL_CUSTOMER = "http://localhost:8080/customers";
-export async function getAll() {
+export async function getAll(value) {
   try {
-    const listCustomer = await axios.get(URL_CUSTOMER);
+    const listCustomer = await axios.get(
+      `http://localhost:8080/customers?name_like=${value}`
+    );
     return listCustomer.data;
   } catch (error) {
     console.log("loi");
@@ -43,5 +45,16 @@ export async function editCustomers(values) {
     const flag = await axios.patch(URL_CUSTOMER + "/" + values.id, values);
   } catch (error) {
     console.log("loi edit");
+  }
+}
+
+export async function customerSerivce(value) {
+  try {
+    const customer = await axios.get(
+      `http://localhost:8080/customers/name_like=${value}`
+    );
+    return customer.data;
+  } catch (error) {
+    console.log("loi~");
   }
 }

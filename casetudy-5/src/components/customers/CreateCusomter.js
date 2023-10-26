@@ -25,14 +25,33 @@ function CreateCustomer() {
     { typeValue: 5, typeName: "Diamond" },
   ];
   const validate = Yub.object().shape({
-    name: Yub.string().required(),
-    birthDay: Yub.string().required(),
-    gender: Yub.string().required(),
-    identity: Yub.string().required(),
-    phoneNumber: Yub.string().required(),
-    email: Yub.string().required(),
-    customerType: Yub.string().required(),
+    name: Yub.string()
+      .matches(/^[A-Za-z ]*$/, "Wrong name format!")
+      .required(),
     address: Yub.string().required(),
+    birthDay: Yub.string()
+      .matches(/^\d{4}\-\d{2}\-\d{2}$/, "wrong birthday format!")
+      .required(),
+    email: Yub.string()
+      .matches(
+        /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/,
+        "Invalid email!"
+      )
+      .required(),
+    phoneNumber: Yub.string()
+      .matches(
+        /^090\d{7}$|^091\d{7}$|^\(84\)(90\d{7})$|^\(84\)(91\d{7})$/,
+        "Invalid phone number format!!"
+      )
+      .required(),
+    identity: Yub.string()
+      .matches(
+        /^\d{9}(\d{3})?$/,
+        "Invalid identity format, put 9 to 12 numbers into this field!!"
+      )
+      .required(),
+    gender: Yub.string().required(),
+    customerType: Yub.string().required(),
   });
   const handleSubmit = (values) => {
     console.log(values.customerType);

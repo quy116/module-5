@@ -2,25 +2,14 @@
   "customers": [
     {
       "id": 1,
-      "name": "Sang Quoc Phanqwe",
+      "name": "qwe",
       "birthDay": "1998-01-01",
       "gender": "0",
-      "identity": 9875156248,
+      "identity": "123123123",
       "phoneNumber": "0902546218",
       "email": "sang@gmail.com",
       "customerType": "Platinum",
       "address": "Hue"
-    },
-    {
-      "id": 3,
-      "name": "Long Nguyen Truong Dinh",
-      "birthDay": "1999-01-01",
-      "gender": "1",
-      "identity": 9875156248,
-      "phoneNumber": "0902546218",
-      "email": "long@gmail.com",
-      "customerType": "Gold",
-      "address": "Da Nang"
     },
     {
       "id": 6,
@@ -54,6 +43,17 @@
       "email": "tulong@gmail.com",
       "customerType": "Diamond",
       "address": "Ha Noi"
+    },
+    {
+      "name": "quycutephomaique",
+      "birthDay": "2023-10-26",
+      "gender": "0",
+      "identity": "123213123123",
+      "phoneNumber": "0909213123",
+      "email": "nguyenphucquy1106@gmail.com",
+      "customerType": "Silver",
+      "address": "ok",
+      "id": 11
     }
   ],
   "customer-types": [
@@ -90,6 +90,40 @@
     {
       "genderValue": 3,
       "genderName": "Other"
+    }
+  ],
+  "contracts": [
+    {
+      "id": 5,
+      "name": "HD5",
+      "startDate": "2022-01-01",
+      "endDate": "2022-01-02",
+      "deposit": 250,
+      "totalPay": 3300
+    },
+    {
+      "id": 7,
+      "name": "HD3",
+      "startDate": "2022-01-01",
+      "endDate": "2022-01-02",
+      "deposit": 250,
+      "totalPay": 2000
+    },
+    {
+      "id": 8,
+      "name": "HD4",
+      "startDate": "2022-01-01",
+      "endDate": "2022-01-02",
+      "deposit": 250,
+      "totalPay": 2100
+    },
+    {
+      "id": 9,
+      "name": "HD5",
+      "startDate": "2022-01-01",
+      "endDate": "2022-01-02",
+      "deposit": 250,
+      "totalPay": 3300
     }
   ]
 }
