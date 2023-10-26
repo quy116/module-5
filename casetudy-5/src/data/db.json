@@ -2,20 +2,20 @@
   "customers": [
     {
       "id": 1,
-      "name": "Sang Quoc Phan",
+      "name": "Sang Quoc Phanqwe",
       "birthDay": "1998-01-01",
-      "gender": "Male",
+      "gender": "0",
       "identity": 9875156248,
       "phoneNumber": "0902546218",
       "email": "sang@gmail.com",
-      "customerType": "Gold",
+      "customerType": "Platinum",
       "address": "Hue"
     },
     {
       "id": 3,
       "name": "Long Nguyen Truong Dinh",
       "birthDay": "1999-01-01",
-      "gender": "Male",
+      "gender": "1",
       "identity": 9875156248,
       "phoneNumber": "0902546218",
       "email": "long@gmail.com",
@@ -23,32 +23,10 @@
       "address": "Da Nang"
     },
     {
-      "id": 4,
-      "name": "Trung Duc Nguyen",
-      "birthDay": "1970-01-01",
-      "gender": "Male",
-      "identity": 9875156248,
-      "phoneNumber": "0902546218",
-      "email": "trung@gmail.com",
-      "customerType": "Gold",
-      "address": "Quang Nam"
-    },
-    {
-      "id": 5,
-      "name": "Tuan Hung",
-      "birthDay": "1986-01-01",
-      "gender": "Male",
-      "identity": 9875156248,
-      "phoneNumber": "0902546218",
-      "email": "hung@gmail.com",
-      "customerType": "Silver",
-      "address": "Ha Noi"
-    },
-    {
       "id": 6,
       "name": "Le Quyen",
       "birthDay": "1984-01-01",
-      "gender": "Female",
+      "gender": "0",
       "identity": 9875156248,
       "phoneNumber": "0902546218",
       "email": "quyen@gmail.com",
@@ -59,7 +37,7 @@
       "id": 8,
       "name": "Phuong Thanh",
       "birthDay": "1986-01-01",
-      "gender": "Female",
+      "gender": "0",
       "identity": 9875156248,
       "phoneNumber": "0902546218",
       "email": "thanh@gmail.com",
@@ -70,12 +48,48 @@
       "id": 10,
       "name": "Tu Long",
       "birthDay": "1978-01-01",
-      "gender": "Male",
+      "gender": "0",
       "identity": 9875156248,
       "phoneNumber": "0902546218",
       "email": "tulong@gmail.com",
       "customerType": "Diamond",
       "address": "Ha Noi"
+    }
+  ],
+  "customer-types": [
+    {
+      "typeValue": 1,
+      "typeName": "Member"
+    },
+    {
+      "typeValue": 2,
+      "typeName": "Silver"
+    },
+    {
+      "typeValue": 3,
+      "typeName": "Gold"
+    },
+    {
+      "typeValue": 4,
+      "typeName": "Platinum"
+    },
+    {
+      "typeValue": 5,
+      "typeName": "Diamond"
+    }
+  ],
+  "genders": [
+    {
+      "genderValue": 1,
+      "genderName": "Male"
+    },
+    {
+      "genderValue": 2,
+      "genderName": "Female"
+    },
+    {
+      "genderValue": 3,
+      "genderName": "Other"
     }
   ]
 }

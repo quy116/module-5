@@ -3,13 +3,12 @@ import { toast } from "react-toastify";
 import * as customerService from "../../service/customerService/customerSerivce";
 function MoveCustomer(customer) {
   const { show, select, handleClose } = customer;
-  console.log(show, select, handleClose);
+
   const handleDelete = async (customer) => {
     const res = await customerService.deleteCustomerById(customer.id);
     if (res === 200) {
       handleClose();
       toast.success("Xóa thành công!");
-      console.log("heo");
     } else {
       toast.error("Lỗi");
     }

@@ -6,8 +6,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ContractTable from "./components/table/contractTable";
 import { Routes, Route } from "react-router-dom";
 import CustomerTable from "./components/customers/customerTable";
-import { ToastContainer, toast } from "react-toastify";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import CreateCusomter from "./components/customers/CreateCusomter";
+import EditCustomer from "./components/customers/EditCustomer";
 function App() {
   return (
     <div className="App">
@@ -17,6 +19,8 @@ function App() {
         <Route path="/customer" element={<CustomerTable />}></Route>
         <Route path="/contract" element={<ContractTable />}></Route>
         <Route path="/facility" element={<Cusd />}></Route>
+        <Route path="/createCumtomer" element={<CreateCusomter />}></Route>
+        <Route path="/editCustomer/:id" element={<EditCustomer />}></Route>
       </Routes>
       {/* <Body /> */}
       {/* <Cusd />
