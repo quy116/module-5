@@ -81,7 +81,7 @@ function CustomerTable() {
                     <td className="text-limit">{item.identity}</td>
                     <td className="text-limit">{item.phoneNumber}</td>
                     <td className="text-limit">{item.email}</td>
-                    <td className="text-limit">{item.customerType}</td>
+                    <td className="text-limit">{item.customerType.typeName}</td>
                     <td className="text-limit">{item.address}</td>
                     <td className=" text-limit">
                       <Link

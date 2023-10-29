@@ -42,18 +42,17 @@ export async function getByIdCustomer(id) {
 }
 export async function editCustomers(values) {
   try {
-    const flag = await axios.patch(URL_CUSTOMER + "/" + values.id, values);
+    const flag = await axios.put(URL_CUSTOMER + `/${values.id}`, values);
+    return flag.status;
   } catch (error) {
     console.log("loi edit");
   }
 }
 
-export async function customerSerivce(value) {
+export async function getType() {
   try {
-    const customer = await axios.get(
-      `http://localhost:8080/customers/name_like=${value}`
-    );
-    return customer.data;
+    const type = await axios.get(`http://localhost:8080/customer-types`);
+    return type.data;
   } catch (error) {
     console.log("loi~");
   }

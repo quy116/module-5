@@ -19,3 +19,35 @@ export async function moveContract(values) {
     console.log("loi~");
   }
 }
+
+export async function createContract(value) {
+  try {
+    const flag = await axios.post("http://localhost:8080/contracts", value);
+    return flag.status;
+  } catch (error) {
+    console.log("loi");
+  }
+}
+
+export async function editContract(value) {
+  console.log(value);
+  try {
+    const flag = await axios.put(
+      `http://localhost:8080/contracts/${value.id}`,
+      value
+    );
+    console.log(flag);
+    return flag.status;
+  } catch (error) {
+    console.log("loi edit Contract");
+  }
+}
+
+export async function getbyId(id) {
+  try {
+    const flag = await axios.get(`http://localhost:8080/contracts/${id}`);
+    return flag.data;
+  } catch (error) {
+    console.log("loi lay contract id");
+  }
+}

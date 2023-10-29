@@ -26,6 +26,31 @@ function ContractList() {
 
   return (
     <div>
+      <h1>DANH SÁCH HỢP ĐỒNG</h1>
+      <div className="flex justify-between">
+        <div className="relative w-64 overflow-hidden rounded-lg">
+          <div className="before absolute before:w-12 before:h-12 before:content[''] before:right-0 before:bg-violet-500 before:rounded-full before:blur-lg"></div>
+          <div className="after absolute -z-10 after:w-20 after:h-20 after:content[''] after:bg-rose-300 after:right-12 after:top-3 after:rounded-full after:blur-lg"></div>
+          <input
+            name="searchName"
+            onChange={(event) => {
+              // handleSearchname(event.target.value);
+            }}
+            placeholder="name..."
+            className="relative bg-transparent ring-0 outline-none border border-neutral-500 text-neutral-900 placeholder-violet-700 text-sm rounded-lg focus:ring-violet-500 placeholder-opacity-60 focus:border-violet-500 block w-full p-2.5 checked:bg-emerald-500"
+            type="text"
+          />
+        </div>
+        <div className="flex items-center justify-end gap-2 pb-4 text-right">
+          <Link
+            className="p-2 text-purple-200 bg-purple-800 rounded-md"
+            style={{ textDecoration: "none" }}
+            to={"/createContract"}
+          >
+            Thêm mới hợp đồng
+          </Link>
+        </div>
+      </div>
       <div className="flex items-center justify-center min-h-screen p-12 bg-gradient-to-tl">
         <main className="table w-4/5 bg-opacity-75 shadow-lg overflow-hidde h-5/6 backdrop-blur-7 rounded-xl">
           <section className="table__body">
@@ -48,6 +73,13 @@ function ContractList() {
                     <td className="text-limit">{item.deposit}</td>
                     <td className="text-limit">{item.totalPay}</td>
                     <td className="text-limit">
+                      <Link
+                        style={{ textDecoration: "none" }}
+                        className="p-2 text-black bg-red-600 rounded-md"
+                        to={`/editContract/${item.id}`}
+                      >
+                        Edit
+                      </Link>
                       <Link
                         style={{ textDecoration: "none" }}
                         className="p-2 text-black bg-red-600 rounded-md"

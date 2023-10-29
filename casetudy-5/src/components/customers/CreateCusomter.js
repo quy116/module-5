@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yub from "yup";
 import * as customerService from "../../service/customerService/customerSerivce";
@@ -6,7 +6,7 @@ import { toast } from "react-toastify";
 import { useNavigate, useParams } from "react-router-dom";
 function CreateCustomer() {
   const navigate = useNavigate();
-
+  const [type, setType] = useState([]);
   const initialValues = {
     name: "",
     birthDay: "",
@@ -14,16 +14,19 @@ function CreateCustomer() {
     identity: "",
     phoneNumber: "",
     email: "",
-    customerType: "",
+    customerType: JSON.stringify({
+      id: "1",
+      name: "Member",
+    }),
     address: "",
   };
-  const customerType = [
-    { typeValue: 1, typeName: "Member" },
-    { typeValue: 2, typeName: "Silver" },
-    { typeValue: 3, typeName: "Gold" },
-    { typeValue: 4, typeName: "Platinum" },
-    { typeValue: 5, typeName: "Diamond" },
-  ];
+  const display = async () => {
+    const customerType = await customerService.getType();
+    setType(customerType);
+  };
+  useEffect(() => {
+    display();
+  }, []);
   const validate = Yub.object().shape({
     name: Yub.string()
       .matches(/^[A-Za-z ]*$/, "Wrong name format!")
@@ -50,17 +53,20 @@ function CreateCustomer() {
         "Invalid identity format, put 9 to 12 numbers into this field!!"
       )
       .required(),
-    gender: Yub.string().required(),
+    gender: Yub.string().required("hi Lien"),
     customerType: Yub.string().required(),
   });
-  const handleSubmit = (values) => {
-    console.log(values.customerType);
-    for (let i = 0; i < customerType.length; i++) {
-      if (values.customerType == customerType[i].typeValue) {
-        values.customerType = customerType[i].typeName;
-      }
+  const handleSubmit = async (values) => {
+    const res = { ...values, customerType: JSON.parse(values.customerType) };
+    const newCustomer = await customerService.saveCustomer(res);
+    console.log(newCustomer);
+    if (newCustomer === 201) {
+      toast("Thêm mới thành công!");
+      navigate("/customer");
+    } else {
+      toast("Lỗi");
+      navigate("/createCumtomer");
     }
-    const flag = customerService.saveCustomer(values);
 
     toast.success("thêm thành công");
     navigate("/customer");
@@ -168,12 +174,11 @@ function CreateCustomer() {
               as="select"
               className="p-2 mb-4 text-gray-800 transition duration-150 ease-in-out bg-gray-100 border-0 rounded-md focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
             >
-              <option value="">Chọn loại khách</option>
-              <option value="1">Member</option>
-              <option value="2">Silver</option>
-              <option value="3">Gold</option>
-              <option value="4">Platinum</option>
-              <option value="5">Diamond</option>
+              {type.map((item) => (
+                <option key={item.id} value={JSON.stringify(item)}>
+                  {item.typeName}
+                </option>
+              ))}
             </Field>
             <div className="text-red-600">
               {" "}

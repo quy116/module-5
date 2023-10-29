@@ -8,7 +8,10 @@
       "identity": "123123123",
       "phoneNumber": "0902546218",
       "email": "sang@gmail.com",
-      "customerType": "Platinum",
+      "customerType": {
+        "id": 2,
+        "typeName": "Silver"
+      },
       "address": "Hue"
     },
     {
@@ -19,7 +22,10 @@
       "identity": 9875156248,
       "phoneNumber": "0902546218",
       "email": "quyen@gmail.com",
-      "customerType": "Silver",
+      "customerType": {
+        "id": 5,
+        "typeName": "Diamond"
+      },
       "address": "California"
     },
     {
@@ -30,7 +36,10 @@
       "identity": 9875156248,
       "phoneNumber": "0902546218",
       "email": "thanh@gmail.com",
-      "customerType": "Platinum",
+      "customerType": {
+        "id": 5,
+        "typeName": "Diamond"
+      },
       "address": "Tp HCM"
     },
     {
@@ -41,7 +50,10 @@
       "identity": 9875156248,
       "phoneNumber": "0902546218",
       "email": "tulong@gmail.com",
-      "customerType": "Diamond",
+      "customerType": {
+        "id": 5,
+        "typeName": "Diamond"
+      },
       "address": "Ha Noi"
     },
     {
@@ -51,30 +63,47 @@
       "identity": "123213123123",
       "phoneNumber": "0909213123",
       "email": "nguyenphucquy1106@gmail.com",
-      "customerType": "Silver",
+      "customerType": {
+        "id": 5,
+        "typeName": "Diamond"
+      },
       "address": "ok",
       "id": 11
+    },
+    {
+      "name": "quy",
+      "birthDay": "1111-11-11",
+      "gender": "0",
+      "identity": "123123123111",
+      "phoneNumber": "0909123123",
+      "email": "nguy@gmail.com",
+      "customerType": {
+        "id": 3,
+        "typeName": "Gold"
+      },
+      "address": "ol",
+      "id": 12
     }
   ],
   "customer-types": [
     {
-      "typeValue": 1,
+      "id": 1,
       "typeName": "Member"
     },
     {
-      "typeValue": 2,
+      "id": 2,
       "typeName": "Silver"
     },
     {
-      "typeValue": 3,
+      "id": 3,
       "typeName": "Gold"
     },
     {
-      "typeValue": 4,
+      "id": 4,
       "typeName": "Platinum"
     },
     {
-      "typeValue": 5,
+      "id": 5,
       "typeName": "Diamond"
     }
   ],
@@ -95,23 +124,15 @@
   "contracts": [
     {
       "id": 5,
-      "name": "HD5",
+      "name": "qweqweq",
       "startDate": "2022-01-01",
       "endDate": "2022-01-02",
-      "deposit": 250,
-      "totalPay": 3300
-    },
-    {
-      "id": 7,
-      "name": "HD3",
-      "startDate": "2022-01-01",
-      "endDate": "2022-01-02",
-      "deposit": 250,
-      "totalPay": 2000
+      "deposit": "2500",
+      "totalPay": "3300122"
     },
     {
       "id": 8,
-      "name": "HD4",
+      "name": "qwe",
       "startDate": "2022-01-01",
       "endDate": "2022-01-02",
       "deposit": 250,
@@ -124,6 +145,22 @@
       "endDate": "2022-01-02",
       "deposit": 250,
       "totalPay": 3300
+    },
+    {
+      "name": "quy",
+      "startDate": "2023-10-07",
+      "endDate": "2000-11-20",
+      "deposit": "250",
+      "totalPay": "2000",
+      "id": 10
+    },
+    {
+      "name": "cute",
+      "startDate": "2023-10-18",
+      "endDate": "18-20-2000",
+      "deposit": "250",
+      "totalPay": "3000",
+      "id": 11
     }
   ]
 }

@@ -8,23 +8,21 @@ import { useNavigate, useParams } from "react-router-dom";
 function EditCustomer() {
   const [customer, setCustomer] = useState({});
   const navigate = useNavigate();
-  console.log(customer);
+  const [type, setType] = useState([]);
+
   const { id } = useParams();
   useEffect(() => {
     async function fetchData() {
       const customers = await customerService.getByIdCustomer(id);
       setCustomer(customers);
     }
-
+    displayType();
     fetchData();
   }, []);
-  const customerType = [
-    { typeValue: 1, typeName: "Member" },
-    { typeValue: 2, typeName: "Silver" },
-    { typeValue: 3, typeName: "Gold" },
-    { typeValue: 4, typeName: "Platinum" },
-    { typeValue: 5, typeName: "Diamond" },
-  ];
+  const displayType = async () => {
+    const type = await customerService.getType();
+    setType(type);
+  };
   const validate = yub.object().shape({
     name: yub
       .string()
@@ -59,18 +57,29 @@ function EditCustomer() {
     gender: yub.string().required(),
     customerType: yub.string().required(),
   });
-  const handleSubmit = (values) => {
-    for (let i = 0; i < customerType.length; i++) {
-      if (values.customerType == customerType[i].typeValue) {
-        values.customerType = customerType[i].typeName;
-      }
+  const handleSubmit = async (values) => {
+    const res = {
+      ...values,
+      customerType: JSON.parse(values.customerType),
+    };
+    console.log(res);
+    const flag = await customerService.editCustomers(res);
+    if (flag === 200) {
     }
-    console.log(values);
-    const flag = customerService.editCustomers(values);
     toast.success("thêm thành công");
     navigate("/customer");
   };
-
+  const initialValues = {
+    id: customer.id,
+    name: customer.name,
+    birthDay: customer.birthDay,
+    gender: customer.gender,
+    identity: customer.identity,
+    phoneNumber: customer.phoneNumber,
+    email: customer.email,
+    customerType: JSON.stringify(customer.customerType),
+    address: customer.address,
+  };
   return (
     customer.id && (
       <div className="flex justify-center p-5">
@@ -79,7 +88,7 @@ function EditCustomer() {
             Chỉnh sửa Khách Hàng
           </h2>
           <Formik
-            initialValues={customer}
+            initialValues={initialValues}
             onSubmit={handleSubmit}
             validationSchema={validate}
           >
@@ -178,13 +187,9 @@ function EditCustomer() {
                 as="select"
                 className="p-2 mb-4 text-gray-800 transition duration-150 ease-in-out bg-gray-100 border-0 rounded-md focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500"
               >
-                {customerType.map((type) => (
-                  <option
-                    key={type.typeValue}
-                    value={type.typeValue}
-                    selected={type.typeValue === customer.customerType}
-                  >
-                    {type.typeName}
+                {type.map((item) => (
+                  <option key={item.id} value={JSON.stringify(item)}>
+                    {item.typeName}
                   </option>
                 ))}
               </Field>
