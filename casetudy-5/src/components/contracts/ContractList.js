@@ -67,7 +67,7 @@ function ContractList() {
               <tbody>
                 {ContractList.map((item, index) => (
                   <tr key={index}>
-                    <td className="text-limit">{item.name}</td>
+                    <td className="text-limit">{item.nameLimit}</td>
                     <td className="text-limit">{item.startDate}</td>
                     <td className="text-limit">{item.endDate}</td>
                     <td className="text-limit">{item.deposit}</td>

@@ -2,12 +2,13 @@ import axios from "axios";
 import React from "react";
 
 const URL_CUSTOMER = "http://localhost:8080/customers";
-export async function getAll(value) {
+export async function getAll(name, type, currentPage, sizePage) {
+  console.log(type);
   try {
     const listCustomer = await axios.get(
-      `http://localhost:8080/customers?name_like=${value}`
+      `http://localhost:8080/customers?name_like=${name}&customerType.typeName_like=${type}&_page=${currentPage}&_limit=${sizePage}&_sort=id&_order=desc`
     );
-    return listCustomer.data;
+    return listCustomer;
   } catch (error) {
     console.log("loi");
   }

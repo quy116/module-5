@@ -83,6 +83,20 @@
       },
       "address": "ol",
       "id": 12
+    },
+    {
+      "name": "quy",
+      "birthDay": "2023-10-14",
+      "gender": "1",
+      "identity": "123213123123",
+      "phoneNumber": "0909090909",
+      "email": "quy@gmail.com",
+      "customerType": {
+        "id": 3,
+        "typeName": "Gold"
+      },
+      "address": "ok",
+      "id": 13
     }
   ],
   "customer-types": [
